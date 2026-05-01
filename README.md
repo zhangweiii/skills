@@ -1,6 +1,4 @@
-# My Agent Skills
-
-A personal collection of agent skills, compatible with **pi**, **Claude Code**, **Codex**, **Cursor**, and any agent that supports the open skills standard.
+Web search and fetch tools, compatible with **pi**, **Claude Code**, **Codex**, **Cursor**, and any agent that supports the open skills standard. Uses the Moonshot (Kimi) API for internet search and URL content fetching. Trigger when you need real-time information, web page retrieval, or online research.
 
 [中文文档](README.zh.md)
 

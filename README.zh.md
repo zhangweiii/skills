@@ -1,6 +1,4 @@
-# My Agent Skills
-
-个人 agent skill 集合，兼容 **pi**、**Claude Code**、**Codex**、**Cursor**，以及任何支持 open skills 标准的 agent。
+联网搜索与网页抓取工具，兼容 **pi**、**Claude Code**、**Codex**、**Cursor** 等支持 open skills 标准的 agent。基于 Moonshot (Kimi) API 提供互联网搜索和 URL 内容获取。在需要实时信息、网页检索或在线调研时触发。
 
 [English Document](README.md)
 
