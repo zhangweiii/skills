@@ -1,0 +1,33 @@
+{
+  "name": "@zhangweiii/skills",
+  "version": "0.0.2",
+  "description": "Personal agent skills collection for pi, Claude Code, Codex, Cursor, etc.",
+  "keywords": [
+    "pi-package",
+    "skills",
+    "agent-skills",
+    "kimi-web-search",
+    "fetch"
+  ],
+  "author": "zhangweiii",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangweiii/skills.git"
+  },
+  "homepage": "https://github.com/zhangweiii/skills#readme",
+  "bugs": {
+    "url": "https://github.com/zhangweiii/skills/issues"
+  },
+  "files": [
+    "skills/",
+    "scripts/",
+    "README.md",
+    "README.zh.md"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}
