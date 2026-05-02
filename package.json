@@ -1,6 +1,6 @@
 {
   "name": "@zhangweiii/skills",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Personal agent skills collection for pi, Claude Code, Codex, Cursor, etc.",
   "keywords": [
     "pi-package",
@@ -16,7 +16,6 @@
     "url": "git+https://github.com/zhangweiii/skills.git"
   },
   "homepage": "https://github.com/zhangweiii/skills#readme",
-  "readme": "README.md",
   "bugs": {
     "url": "https://github.com/zhangweiii/skills/issues"
   },
