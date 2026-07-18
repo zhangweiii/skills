@@ -20,10 +20,10 @@
     "url": "https://github.com/zhangweiii/skills/issues"
   },
   "files": [
+    "docs/",
     "skills/",
     "scripts/",
-    "README.md",
-    "README.zh.md"
+    "README.md"
   ],
   "pi": {
     "skills": [

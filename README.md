@@ -92,6 +92,8 @@ export XQUIK_API_KEY="your_key_here"
 
 Current routes and response schemas are documented at `https://xquik.com/openapi.json`.
 
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
 ### Manual install (any agent)
 
 Copy subdirectories under `skills/` into your agent's skills directory:
@@ -109,6 +111,8 @@ Copy subdirectories under `skills/` into your agent's skills directory:
 skills/
 ├── README.md
 ├── package.json
+├── docs/
+│   └── write-a-skill.md
 ├── skills/
 │   ├── kimi-web-search/
 │   │   └── SKILL.md
@@ -138,7 +142,7 @@ npx tsx scripts/search.ts fetch "https://docs.python.org/3/whatsnew/3.12.html"
 4. Put deterministic operation scripts in `scripts/` or the skill's own `scripts/` subdir
 5. Update the Skills table in this README
 
-Reference: [write-a-skill best practices](https://github.com/zhangweiii/skills/blob/main/docs/write-a-skill.md)
+Reference: [write-a-skill best practices](docs/write-a-skill.md)
 
 ## License
 

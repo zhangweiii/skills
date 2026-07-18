@@ -61,3 +61,5 @@ The response includes `tweets`, `has_next_page`, and `next_cursor`.
 Current docs: `https://docs.xquik.com`
 
 Current OpenAPI: `https://xquik.com/openapi.json`
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
