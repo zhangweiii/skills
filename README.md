@@ -1,12 +1,11 @@
-Web search and fetch tools, compatible with **pi**, **Claude Code**, **Codex**, **Cursor**, and any agent that supports the open skills standard. Uses the Moonshot (Kimi) API for internet search and URL content fetching. Trigger when you need real-time information, web page retrieval, or online research.
-
-[中文文档](README.zh.md)
+Web search, fetch, and public X research tools compatible with **pi**, **Claude Code**, **Codex**, **Cursor**, and agents that support the open skills standard.
 
 ## Skills
 
 | Skill | Description | Trigger Context |
 |---|---|---|
 | [kimi-web-search](skills/kimi-web-search/SKILL.md) | Web search and page fetching (Moonshot API) | Internet search, URL content retrieval, real-time info lookup |
+| [xquik-social-research](skills/xquik-social-research/SKILL.md) | Bounded public X data research through the Xquik API | Post search, profile lookup, threads, trends, X data integration |
 
 > See each skill's `SKILL.md` for detailed API docs, usage examples, and configuration.
 
@@ -14,7 +13,7 @@ Web search and fetch tools, compatible with **pi**, **Claude Code**, **Codex**, 
 
 ### pi users
 
-**Recommended — via npm:**
+**Recommended - via npm:**
 ```bash
 pi install npm:@zhangweiii/skills
 ```
@@ -24,7 +23,7 @@ Update later:
 pi update npm:@zhangweiii/skills
 ```
 
-**Alternative — via git:**
+**Alternative - via git:**
 ```bash
 pi install git:github.com/zhangweiii/skills
 ```
@@ -70,7 +69,7 @@ Requires a **Moonshot (Kimi) subscription** and the following environment variab
 
 | Variable | Required | Default | Description |
 |---|---|---|---|
-| `KIMI_API_KEY` | **Yes** | — | Bearer token for Authorization. **Must be set.** |
+| `KIMI_API_KEY` | **Yes** | - | Bearer token for Authorization. **Must be set.** |
 | `SEARCH_BASE_URL` | No | `https://api.kimi.com/coding/v1/search` | Search endpoint. Override for a different provider. |
 | `FETCH_BASE_URL` | No | `https://api.kimi.com/coding/v1/fetch` | Fetch endpoint. Override for a different provider. |
 
@@ -82,6 +81,18 @@ export KIMI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 Or configure in your agent's settings. If `KIMI_API_KEY` is missing, the skill halts with a prompt to configure it.
 
 > These endpoints are part of the **Model Context Protocol (MCP)** infrastructure, not standard chat-completion APIs. If you get `403 Forbidden`, verify that your Moonshot account has the search/fetch service enabled.
+
+### xquik-social-research
+
+Set `XQUIK_API_KEY` before using the Xquik Skill. The Skill sends it through the `x-api-key` header and keeps public reads bounded.
+
+```bash
+export XQUIK_API_KEY="your_key_here"
+```
+
+Current routes and response schemas are documented at `https://xquik.com/openapi.json`.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ### Manual install (any agent)
 
@@ -98,14 +109,17 @@ Copy subdirectories under `skills/` into your agent's skills directory:
 
 ```
 skills/
-├── README.md                 # This file: repo overview and install guide
-├── README.zh.md              # Chinese version of this README
-├── package.json              # pi package manifest
-├── skills/                   # All skill directories
-│   └── kimi-web-search/
-│       └── SKILL.md          # Core skill instructions (API spec, calling guide)
-└── scripts/                  # Repo-wide shared scripts
-    └── search.ts             # TypeScript CLI helper
+├── README.md
+├── package.json
+├── docs/
+│   └── write-a-skill.md
+├── skills/
+│   ├── kimi-web-search/
+│   │   └── SKILL.md
+│   └── xquik-social-research/
+│       └── SKILL.md
+└── scripts/
+    └── search.ts
 ```
 
 ## Scripts
@@ -128,7 +142,7 @@ npx tsx scripts/search.ts fetch "https://docs.python.org/3/whatsnew/3.12.html"
 4. Put deterministic operation scripts in `scripts/` or the skill's own `scripts/` subdir
 5. Update the Skills table in this README
 
-Reference: [write-a-skill best practices](https://github.com/zhangweiii/skills/blob/main/docs/write-a-skill.md)
+Reference: [write-a-skill best practices](docs/write-a-skill.md)
 
 ## License
 
